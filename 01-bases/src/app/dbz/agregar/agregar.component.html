@@ -1,0 +1,30 @@
+
+
+
+<h3>Agregar <small>{{ nuevo.nombre }}</small></h3>
+        
+        <hr>
+                <!-- Con llaves cuadradas se indica que se enlace onewayDataBinding -->
+        <form (ngSubmit)="agregar()" >
+            <input 
+                placeholder="Nombre" 
+                type="text"
+                name="nombre"
+                [(ngModel)]="nuevo.nombre"
+            />
+            <!-- two way data binding [(ngModel)]="nuevo.nombre" -->
+
+            <!-- [value]="nuevo.nombre"  -->
+            <!-- (input)="cambiarNombre( $event )" -->
+            <input 
+                placeholder="Poder" 
+                type="number" 
+                name="poder"
+                [value]="nuevo.poder"
+                [(ngModel)]="nuevo.poder"
+            />
+            
+            <button type="submit">
+                Agregar
+            </button>
+        </form>
